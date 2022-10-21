@@ -1,5 +1,5 @@
-# 2022-RAPID-REACT-3243
-Repository for AMES Amperes 2022 Rapid React season. 
+# Maridia-2023
+Repository for Maridia for the FRC 2023 season. 
 
 ## Table of contents
 * [General info](#general-info)
@@ -8,7 +8,7 @@ Repository for AMES Amperes 2022 Rapid React season.
 * [Libraries](#Libraries)
 
 ## General info
-This is the official code for the official FRC 2022 Rapid React season
+This is the code for Maridia for the 2022 preseason and the official 2023 First Robotics Competition.
 
 ## Technologies
 Project is created with:
