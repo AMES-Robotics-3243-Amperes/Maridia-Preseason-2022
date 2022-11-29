@@ -269,7 +269,7 @@ public class ClimberSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
 
-    calibrationCurrent=SmartDashboard.getNumber("calibration current", 20);
+    // calibrationCurrent=SmartDashboard.getNumber("calibration current", 20);
 
     // :) record the average encoder values on the motors
     // encoderGrabberAngles[0] = (grabberL0Encoder.getPosition()+grabberR0Encoder.getPosition())/2; //is average
@@ -293,36 +293,36 @@ public class ClimberSubsystem extends SubsystemBase {
 
 
     // :) update and spin the motors to their angles UNCOMMENT TO TEST PAWLS
-    if (DriverStation.getMatchTime()<1.5 && DriverStation.isTeleop()){
-      // :) engage pawls when match is nearly over
-      pawlServoAngles[0] = Constants.Climber.pawlClosed;
-      pawlServoAngles[1] = Constants.Climber.pawlClosed;
-    }
-    if (currentClimberStep == 7){
-      pawlServoAngles[0] = Constants.Climber.pawlClosed;
-    }
+    // if (DriverStation.getMatchTime()<1.5 && DriverStation.isTeleop()){
+    //   // :) engage pawls when match is nearly over
+    //   pawlServoAngles[0] = Constants.Climber.pawlClosed;
+    //   pawlServoAngles[1] = Constants.Climber.pawlClosed;
+    // }
+    // if (currentClimberStep == 7){
+    //   pawlServoAngles[0] = Constants.Climber.pawlClosed;
+    // }
 
     // :) these two if-statements make it so that if the pawls are engaged or engaging, the grabbers can't open back up
-    if (prevEncoderGrabberAngles[0] < encoderGrabberAngles[0] && pawlServoAngles[0]==Constants.Climber.pawlClosed){
-      grabberAngles[0]=prevEncoderGrabberAngles[0];
-    }
-    if (prevEncoderGrabberAngles[1] < encoderGrabberAngles[1] && pawlServoAngles[1]==Constants.Climber.pawlClosed) {
-      grabberAngles[0]=prevEncoderGrabberAngles[0];
-    }
+    // if (prevEncoderGrabberAngles[0] < encoderGrabberAngles[0] && pawlServoAngles[0]==Constants.Climber.pawlClosed){
+    //   grabberAngles[0]=prevEncoderGrabberAngles[0];
+    // }
+    // if (prevEncoderGrabberAngles[1] < encoderGrabberAngles[1] && pawlServoAngles[1]==Constants.Climber.pawlClosed) {
+    //   grabberAngles[0]=prevEncoderGrabberAngles[0];
+    // }
 
-    if (isCalibrated){
-      if ((DriverStation.getMatchTime()<1.5 && DriverStation.isTeleop())){
-        isClimberStepStopped = true;
-        grabberHoldAngles = grabberAngles;
-      }
+    // if (isCalibrated){
+    //   if ((DriverStation.getMatchTime()<1.5 && DriverStation.isTeleop())){
+    //     isClimberStepStopped = true;
+    //     grabberHoldAngles = grabberAngles;
+    //   }
 
-      if (isClimberStepStopped){ // :) if paused then hold current climber arm position
-        climberMotorRPID.setReference(climberHoldAngle, ControlType.kPosition);
-        climberMotorLPID.setReference(climberHoldAngle, ControlType.kPosition);
-      } else {
-        climberMotorRPID.setReference(climberAngle+climberOffsetAngle, ControlType.kPosition);
-        climberMotorLPID.setReference(climberAngle+climberOffsetAngle, ControlType.kPosition);
-      }
+    //   if (isClimberStepStopped){ // :) if paused then hold current climber arm position
+    //     climberMotorRPID.setReference(climberHoldAngle, ControlType.kPosition);
+    //     climberMotorLPID.setReference(climberHoldAngle, ControlType.kPosition);
+    //   } else {
+    //     climberMotorRPID.setReference(climberAngle+climberOffsetAngle, ControlType.kPosition);
+    //     climberMotorLPID.setReference(climberAngle+climberOffsetAngle, ControlType.kPosition);
+    //   }
 
       // :) only actually does stuff if the grabbers are calibrated and the grabber encoders are within limits
       // if ((grabberL0Encoder.getPosition()<gripperOpenMaximum+2 && grabberL0Encoder.getPosition()<grabberAngles[0]) ||
@@ -376,7 +376,7 @@ public class ClimberSubsystem extends SubsystemBase {
 
       
 
-    } else if (isCalibrating){
+    // } else if (isCalibrating){
       // :) calibration!!
       // if (grabberR0.getOutputCurrent() > calibrationCurrent || grabberR0.getLastError() == REVLibError.kCANDisconnected) {
       //   grabberR0.set(0);
@@ -404,27 +404,27 @@ public class ClimberSubsystem extends SubsystemBase {
       // }
 
       // :) during calibration also open pawls
-      pawlServoAngles[0] = Constants.Climber.pawlOpen;
-      pawlServoAngles[1] = Constants.Climber.pawlOpen;
+      // pawlServoAngles[0] = Constants.Climber.pawlOpen;
+      // pawlServoAngles[1] = Constants.Climber.pawlOpen;
 
       // :) set isCalibrated to true only if all in the list is set to true
-      isCalibrated = isGrabberCalibrated[0] && isGrabberCalibrated[1] && isGrabberCalibrated[2] && isGrabberCalibrated[3];
+      // isCalibrated = isGrabberCalibrated[0] && isGrabberCalibrated[1] && isGrabberCalibrated[2] && isGrabberCalibrated[3];
       // :) also stop calibrating when the above conditions are met
-      isCalibrating = !isCalibrated;
+      // isCalibrating = !isCalibrated;
 
-      prevEncoderGrabberAngles = encoderGrabberAngles;
+      // prevEncoderGrabberAngles = encoderGrabberAngles;
       
-    }
+    // }
     
 
     // :) putting motors stuff on smartdashboard (yeah there's a lot of stuff)
-    SmartDashboard.putNumber("Avg. Temp of grabber motors 0 (Celcius)", (grabberL0.getMotorTemperature()+grabberR0.getMotorTemperature())/2);
-    SmartDashboard.putNumber("Avg. Temp of grabber motors 1 (Celcius)", (grabberL1.getMotorTemperature()+grabberR1.getMotorTemperature())/2);
+    // SmartDashboard.putNumber("Avg. Temp of grabber motors 0 (Celcius)", (grabberL0.getMotorTemperature()+grabberR0.getMotorTemperature())/2);
+    // SmartDashboard.putNumber("Avg. Temp of grabber motors 1 (Celcius)", (grabberL1.getMotorTemperature()+grabberR1.getMotorTemperature())/2);
     SmartDashboard.putNumber("Avg. Temp of climber motors (Celcius)", (climberMotorL.getMotorTemperature()+climberMotorR.getMotorTemperature())/2);
     SmartDashboard.putNumber("Grabber side 0", grabberAngles[0]);
     SmartDashboard.putNumber("Grabber side 1", grabberAngles[1]);
-    SmartDashboard.putNumber("Grabber side 1 encoder", grabberR1Encoder.getPosition());
-    SmartDashboard.putNumber("grabber r1 current", grabberR1.getOutputCurrent());
+    // SmartDashboard.putNumber("Grabber side 1 encoder", grabberR1Encoder.getPosition());
+    // SmartDashboard.putNumber("grabber r1 current", grabberR1.getOutputCurrent());
     SmartDashboard.putBooleanArray("isCalibratedArray", isGrabberCalibrated);
     SmartDashboard.putBoolean("isCalibrated", isCalibrated);
     SmartDashboard.putNumberArray("set grabber values", grabberAngles);
@@ -438,25 +438,25 @@ public class ClimberSubsystem extends SubsystemBase {
     // SmartDashboard.putNumber("Shaktool L angle", climberMotorLEncoder.getPosition());
 
     // :) vibrates controller if any motor gets beyond a specific temp (and less than 150 because it reports that if the motor is disconnected) 
-    if (climberMotorR.getMotorTemperature()>maxTemp || climberMotorL.getMotorTemperature()>maxTemp ||
-        (grabberL0.getMotorTemperature()>maxTemp && grabberL0.getMotorTemperature()<150) ||
-        (grabberL1.getMotorTemperature()>maxTemp && grabberL1.getMotorTemperature()<150) ||
-        (grabberR0.getMotorTemperature()>maxTemp && grabberR0.getMotorTemperature()<150) ||
-        (grabberR1.getMotorTemperature()>maxTemp && grabberR1.getMotorTemperature()<150)) {
-      isTooHot = true;
-    } else {
-      isTooHot = false;
-    }
+    // if (climberMotorR.getMotorTemperature()>maxTemp || climberMotorL.getMotorTemperature()>maxTemp ||
+    //     (grabberL0.getMotorTemperature()>maxTemp && grabberL0.getMotorTemperature()<150) ||
+    //     (grabberL1.getMotorTemperature()>maxTemp && grabberL1.getMotorTemperature()<150) ||
+    //     (grabberR0.getMotorTemperature()>maxTemp && grabberR0.getMotorTemperature()<150) ||
+    //     (grabberR1.getMotorTemperature()>maxTemp && grabberR1.getMotorTemperature()<150)) {
+    //   isTooHot = true;
+    // } else {
+    //   isTooHot = false;
+    // }
 
-    prevStopped = isClimberStepStopped;
+    // prevStopped = isClimberStepStopped;
 
-    ShuffleboardSubsystem.arePawlsEngaged(currentClimberStep == 9);
+    // ShuffleboardSubsystem.arePawlsEngaged(currentClimberStep == 9);
 
-    double c = 0.0;
-      if (currentClimberStep < 9) {
-        c ++;
-      }
-    ShuffleboardSubsystem.allClimberSteps(c);
+    // double c = 0.0;
+    //   if (currentClimberStep < 9) {
+    //     c ++;
+    //   }
+    // ShuffleboardSubsystem.allClimberSteps(c);
 
     }
 

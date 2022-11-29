@@ -41,6 +41,9 @@ import frc.robot.commands.ShooterStuff.DumpShooterCommands.DumpCommandGroup;
 // ++ auto
 import frc.robot.commands.AutonomousCommands.LookAtCommand;
 
+// :) preseason modification stuff
+import frc.robot.commands.climber_commands.ManualClimbCommand;
+
 
 
 /* Luke's (CAD lead) helpful code:
@@ -99,6 +102,7 @@ public class RobotContainer {
   private final ClimberSubsystem m_ClimberSubsystem = new ClimberSubsystem();
   // commands
   private final ClimbManagerCommand m_ClimbCommand = new ClimbManagerCommand(m_ClimberSubsystem, secondaryController);
+  private final ManualClimbCommand m_ManualClimbCommand = new ManualClimbCommand(m_ClimberSubsystem, secondaryController);
   private final recalibrate_grippers m_recalibrateGrip = new recalibrate_grippers(m_ClimberSubsystem);
   // ++ =================================================
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
@@ -138,7 +142,7 @@ public class RobotContainer {
 
     // ++ command stuff
     // m_DriveSubsystem.setDefaultCommand(m_DriveCommand);
-    m_ClimberSubsystem.setDefaultCommand(m_ClimbCommand);
+    m_ClimberSubsystem.setDefaultCommand(m_ManualClimbCommand);
     m_DriveSubsystem.setDefaultCommand(m_PIDDriveCommand);
     m_ShooterSubsystem.setDefaultCommand(m_ShooterCommand);
     m_IntakeIndexerSubsystem.setDefaultCommand(m_SpinIntakeCommand);
