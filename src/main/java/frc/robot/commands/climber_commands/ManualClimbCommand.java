@@ -49,7 +49,7 @@ public class ManualClimbCommand extends CommandBase {
     // :) gets left and right trigger axes to spin the shaktool climber for fine manual adjustments (shouldn't need this if everything goes well)
     // :) they cancel each other out as well
 
-    if (!m_ClimberSubsystem.isRunningClimbCommand && m_ClimberSubsystem.isClimbEnabled) {
+    // if (!m_ClimberSubsystem.isRunningClimbCommand && m_ClimberSubsystem.isClimbEnabled) {
       if (Math.abs(joystick.getLeftY())>0.1) {
         spinSpeed = joystick.getLeftY()/8;
       } else {
@@ -57,7 +57,7 @@ public class ManualClimbCommand extends CommandBase {
       }
       m_ClimberSubsystem.spinClimber(spinSpeed);
       m_ClimberSubsystem.climberOffsetAngle += spinSpeed;
-    }
+    // }
 
     if (m_ClimberSubsystem.isTooHot){
       // joystick.setRumble(RumbleType.kLeftRumble, 1);
