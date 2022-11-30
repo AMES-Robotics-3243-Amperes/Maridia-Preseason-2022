@@ -225,7 +225,7 @@ public final class Constants {
                 // ++ RIGHT NOW ALL OF THESE ARE VERY MUCH BALLPARKS. THIS IS JUST SO THEY HAVE A VALUE
         public static final double rotationErrorTolerance = 5.0;
         public static final double hoodErrorTolerance = 5.0;
-        public static final double flywheelSpeedErrorTolerance = 20.0;
+        public static final double flywheelSpeedErrorTolerance = 100.0;
 
         // ++ timeout lengths
             // ++ FIGURE OUT WHAT THESE SHOULD ACTUALLY BE
@@ -249,7 +249,7 @@ public final class Constants {
 
         // ++ ======= field/robot measurements ============ (all in feet)
 
-        public static final double hubHeight = 8.6666666667; // ++ i put this as a decimal approx bc (104/12) was being weird
+        public static final double hubHeight = 6.45; // ++ i put this as a decimal approx bc (104/12) was being weird
 
         /** ++ this should be the distance of the limelight above the ground */
         public static final double shooterHeight = 1.41666667; 
@@ -259,9 +259,9 @@ public final class Constants {
 
         // ++ these are the offsets of the arbitrary point above the ring relative to the center of the ring 
             /** ++ the horizontal distance between the (close) edge of the hub and the center */
-        public static final double arbPointXOffset = -2.0;
+        public static final double arbPointXOffset = -1.0;
             /** ++ the vertical distance between the hub and the arbitrary point */
-        public static final double arbPointYOffset = 1.0;
+        public static final double arbPointYOffset = 0;
 
     }
 
