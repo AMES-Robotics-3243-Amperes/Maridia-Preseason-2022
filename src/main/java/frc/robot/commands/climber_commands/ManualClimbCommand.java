@@ -38,7 +38,7 @@ public class ManualClimbCommand extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_ClimberSubsystem.calibrateGrabbers();
+    //m_ClimberSubsystem.calibrateGrabbers();
   }
 
   

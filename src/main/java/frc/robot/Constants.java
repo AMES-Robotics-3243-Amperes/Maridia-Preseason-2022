@@ -245,7 +245,7 @@ public final class Constants {
     public static final class Limelight {
         // ++ ====== actual limelight values ============
             /** angle of the limelight; degrees up from horizontal */
-        public static final double limelightAngleOffset = 40.8; // pre bump: 40.7;
+        public static final double limelightAngleOffset = 40.26; // pre bump: 40.7;
 
         // ++ ======= field/robot measurements ============ (all in feet)
 

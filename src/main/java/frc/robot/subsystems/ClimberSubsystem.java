@@ -320,8 +320,8 @@ public class ClimberSubsystem extends SubsystemBase {
     //     climberMotorRPID.setReference(climberHoldAngle, ControlType.kPosition);
     //     climberMotorLPID.setReference(climberHoldAngle, ControlType.kPosition);
     //   } else {
-    //     climberMotorRPID.setReference(climberAngle+climberOffsetAngle, ControlType.kPosition);
-    //     climberMotorLPID.setReference(climberAngle+climberOffsetAngle, ControlType.kPosition);
+         climberMotorRPID.setReference(climberAngle+climberOffsetAngle, ControlType.kPosition);
+         climberMotorLPID.setReference(climberAngle+climberOffsetAngle, ControlType.kPosition);
     //   }
 
       // :) only actually does stuff if the grabbers are calibrated and the grabber encoders are within limits
