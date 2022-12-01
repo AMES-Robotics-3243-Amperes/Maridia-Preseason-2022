@@ -51,7 +51,7 @@ public class ShuffleboardSubsystem extends SubsystemBase {
   static ComplexWidget recalibrateGrippers;
     // ++ shooter stuff
   static SimpleWidget 
-      flywheelSpeed, 
+      flywheelTargetSpeed, 
       
       flywheelPGain, 
       flywheelIGain, 
@@ -136,6 +136,7 @@ public class ShuffleboardSubsystem extends SubsystemBase {
       field = driverFeedbackTab.add("Where you are on the field", DriveSubsystem.getField());
       // ££ ==================== SHOOTER FEEDBACK ==========================================================
       seesTarget = driverFeedbackTab.add("Can you see target", LimelightSubsystem.isTargetValid());
+      flywheelTargetSpeed = driverFeedbackTab.add("flywheel speed", Constants.Shooter.autoFlywheelDefaultRPM);
       // ££===================== CLIMBER FEEDBACK ==========================================================
       pawlsEngaged = driverFeedbackTab.add("Are pawls engaged", false);
       climberSteps = driverFeedbackTab.add("What climber step is it", 0);
@@ -144,7 +145,7 @@ public class ShuffleboardSubsystem extends SubsystemBase {
 
 
     // ++ ==================== SHOOTER STUFF =============================================
-    flywheelSpeed = shooterTab.add("flywheel speed", 0.0);
+
 
     flywheelPGain = shooterTab.add("flywheel P gain", Constants.Shooter.flywheelPGain);
     flywheelIGain = shooterTab.add("flywheel I gain", Constants.Shooter.flywheelIGain);
@@ -249,7 +250,7 @@ public class ShuffleboardSubsystem extends SubsystemBase {
   }
 
   public static double readTargetFlywheelRPM(){
-    return flywheelSpeed.getEntry().getDouble(-1);
+    return flywheelTargetSpeed.getEntry().getDouble(-1);
   }
 
 

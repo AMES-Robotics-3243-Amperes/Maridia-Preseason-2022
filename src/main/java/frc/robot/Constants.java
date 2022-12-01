@@ -235,6 +235,9 @@ public final class Constants {
 
         public static final double shootPause = 0.25;
 
+                /** ++ this is the default flywheel speed for auto shooting routine */
+                public static final double autoFlywheelDefaultRPM = 0.0;
+
 
 
 
@@ -262,6 +265,8 @@ public final class Constants {
         public static final double arbPointXOffset = -1.0;
             /** ++ the vertical distance between the hub and the arbitrary point */
         public static final double arbPointYOffset = 0;
+
+
 
     }
 
