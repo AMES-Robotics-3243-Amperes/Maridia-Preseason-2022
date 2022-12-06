@@ -19,9 +19,9 @@ public class recalibrate_grippers extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    if (m_ClimberSubsystem.currentClimberStep == 0){
+    //if (m_ClimberSubsystem.currentClimberStep == 0){
       m_ClimberSubsystem.calibrateGrabbers();
-    }
+    //}
   }
 
   // Called every time the scheduler runs while the command is scheduled.
