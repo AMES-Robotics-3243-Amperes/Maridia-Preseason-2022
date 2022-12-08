@@ -225,7 +225,7 @@ public final class Constants {
                 // ++ RIGHT NOW ALL OF THESE ARE VERY MUCH BALLPARKS. THIS IS JUST SO THEY HAVE A VALUE
         public static final double rotationErrorTolerance = 5.0;
         public static final double hoodErrorTolerance = 5.0;
-        public static final double flywheelSpeedErrorTolerance = 100.0;
+        public static final double flywheelSpeedErrorTolerance = 30.0;
 
         // ++ timeout lengths
             // ++ FIGURE OUT WHAT THESE SHOULD ACTUALLY BE
@@ -248,11 +248,11 @@ public final class Constants {
     public static final class Limelight {
         // ++ ====== actual limelight values ============
             /** angle of the limelight; degrees up from horizontal */
-        public static final double limelightAngleOffset = 40.26; // pre bump: 40.7;
+        public static final double limelightAngleOffset = 39.95; // pre bump: 40.7;
 
         // ++ ======= field/robot measurements ============ (all in feet)
 
-        public static final double hubHeight = 6.45; // ++ i put this as a decimal approx bc (104/12) was being weird
+        public static final double hubHeight = 6.46; // ++ i put this as a decimal approx bc (104/12) was being weird[]p
 
         /** ++ this should be the distance of the limelight above the ground */
         public static final double shooterHeight = 1.41666667; 

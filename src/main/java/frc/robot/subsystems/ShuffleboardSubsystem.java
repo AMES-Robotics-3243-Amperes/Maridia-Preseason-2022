@@ -136,7 +136,7 @@ public class ShuffleboardSubsystem extends SubsystemBase {
       field = driverFeedbackTab.add("Where you are on the field", DriveSubsystem.getField());
       // ££ ==================== SHOOTER FEEDBACK ==========================================================
       seesTarget = driverFeedbackTab.add("Can you see target", LimelightSubsystem.isTargetValid());
-      flywheelTargetSpeed = driverFeedbackTab.add("flywheel speed", Constants.Shooter.autoFlywheelDefaultRPM);
+      flywheelTargetSpeed = driverFeedbackTab.add("flywheel target speed", Constants.Shooter.autoFlywheelDefaultRPM);
       // ££===================== CLIMBER FEEDBACK ==========================================================
       pawlsEngaged = driverFeedbackTab.add("Are pawls engaged", false);
       climberSteps = driverFeedbackTab.add("What climber step is it", 0);

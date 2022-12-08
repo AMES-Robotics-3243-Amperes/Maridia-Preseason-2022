@@ -42,15 +42,15 @@ public class AutonomousCommand extends SequentialCommandGroup {
     // InstantCommand initializeTeleop = new InstantCommand(drive::toTeleopMode, drive);
     MecanumDriveWheelSpeeds forwardSpeeds =  new MecanumDriveWheelSpeeds(Constants.DriveTrain.maxWheelSpeed/-5, Constants.DriveTrain.maxWheelSpeed/-5, Constants.DriveTrain.maxWheelSpeed/-5, Constants.DriveTrain.maxWheelSpeed/-5);
     addCommands(new SetPoseCommand(drive),
-                new GoToCommand(drive, true),
-                new InstantCommand(drive::stopRobot, drive),
-                new WaitCommand(0.75),
-                new ParallelCommandGroup(new AutonomousSpintakeCommand(intake, 2), new DeadreckonDriveCommand(drive, forwardSpeeds, 2)),
-                // new GoToCommand(drive, false);
+                // new GoToCommand(drive, true),
+                // new InstantCommand(drive::stopRobot, drive),
+                // new WaitCommand(0.75),
+                // new ParallelCommandGroup(new AutonomousSpintakeCommand(intake, 2), new DeadreckonDriveCommand(drive, forwardSpeeds, 2)),
+                // // new GoToCommand(drive, false);
 
 
-                // More cursed coefficients woo! This makes it do a 180, don't ask why this many radians is a U-turn to the robot
-                new ParallelCommandGroup(new TurnCommand(drive, (1.275 * Math.PI)), new AutonomousSpintakeCommand(intake, 2)),
+                // // More cursed coefficients woo! This makes it do a 180, don't ask why this many radians is a U-turn to the robot
+                // new ParallelCommandGroup(new TurnCommand(drive, (1.275 * Math.PI)), new AutonomousSpintakeCommand(intake, 2)),
                 new ShootRoutineCommandGroup(drive, intake, shooter, hood, null),
                 new InstantCommand(drive::resetOutputRange, drive),
                 new InstantCommand(drive::stopRobot, drive));
