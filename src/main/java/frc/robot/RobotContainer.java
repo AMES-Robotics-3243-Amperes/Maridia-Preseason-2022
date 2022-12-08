@@ -101,7 +101,7 @@ public class RobotContainer {
   private final DriveSubsystem m_DriveSubsystem = new DriveSubsystem();
   private final ClimberSubsystem m_ClimberSubsystem = new ClimberSubsystem();
   // commands
-  //private final ClimbManagerCommand m_ClimbCommand = new ClimbManagerCommand(m_ClimberSubsystem, secondaryController);
+  private final ClimbManagerCommand m_ClimbCommand = new ClimbManagerCommand(m_ClimberSubsystem, secondaryController);
   private final ManualClimbCommand m_ManualClimbCommand = new ManualClimbCommand(m_ClimberSubsystem, secondaryController);
   private final recalibrate_grippers m_recalibrateGrip = new recalibrate_grippers(m_ClimberSubsystem);
   // ++ =================================================
