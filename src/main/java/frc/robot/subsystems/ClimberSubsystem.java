@@ -415,6 +415,11 @@ public class ClimberSubsystem extends SubsystemBase {
 
       prevEncoderGrabberAngles = encoderGrabberAngles;
       
+    } else {
+      grabberR0.set(0);
+      grabberL0.set(0);
+      grabberR1.set(0);
+      grabberL1.set(0);
     }
     
 
